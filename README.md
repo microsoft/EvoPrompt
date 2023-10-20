@@ -32,16 +32,25 @@ bash scripts/sim/run_ga_alpaca.sh
 # summarization task on Alpaca
 bash scripts/sum/run_de_alpaca.sh
 bash scripts/sum/run_ga_alpaca.sh
+
+# for BBH tasks
+cd BBH
+bash scripts/run_de_cot.sh  # DE 
+bash scripts/run_ga_cot.sh  # GA
 ```
 
 ### 🤔 Inference
 
-To evaluate a single instruction, run the following:
+To evaluate a single instruction, run the following, set the argument `--content` to evaluate a performance of a specific prompt
 
 ```bash
 bash scripts/cls/eval_single_alpaca.sh  # understanding task on alpaca
 bash scripts/sim/eval_single_alpaca.sh  # simplification
 bash scripts/sum/eval_single_alpaca.sh  # summarization
+
+# BBH
+cd BBH
+bash scripts/eval.sh  # few-shot evaluation
 ```
 
 ### 📌 Notes
@@ -92,10 +101,9 @@ For the pipeline of EvoPrompt, there are mainly three steps as follows, while fo
 
 ```python
 .
-├── LICENSE
-├── README.md
 ├── args.py
 ├── auth.yaml
+├── BBH  # code for BBH tasks
 ├── data  # dataset, templates used
 │   ├── cls
 │   ├── sim
@@ -124,9 +132,6 @@ For the pipeline of EvoPrompt, there are mainly three steps as follows, while fo
 - **More fine-grained metrics**: to select prompt maintained in the population, we need to evaluate the performance on dev set. However, for understanding tasks, metrics such as accuracy or F1 are coarse-grained, sometimes it's not accurate anough to select which to keep in the population since the performances of them are the same.
 - **More complex tasks** are left to explore.
 
-## ☑️ TODO
-
-- [ ] EvoPrompt for BBH tasks
 
 ## ☕️ Citation
 
@@ -151,7 +156,7 @@ Our codebase is based on the following repos. Thanks for open-sourcing!
 
 ## Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
 
@@ -165,8 +170,8 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 ## Trademarks
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.

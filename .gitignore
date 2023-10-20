@@ -1,10 +1,10 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod]
-*$py.class
 .vscode/
-outputs/
+*outputs*/
+logs/
 prompts*.json
+BBH/data/*.json
 
 # C extensions
 *.so

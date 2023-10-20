@@ -12,12 +12,12 @@ turbo:
     api_key: 
     # api_base: 
     # api_version: 
-    # engine: 
-    model: gpt-3.5-turbo
+    engine: gpt-35-turbo
+    model: gpt-35-turbo
 gpt4:
   default:
-    api_type: 
-    api_base: 
+    # api_type: 
+    # api_base: 
     api_key: 
-    api_version: 
-    engine:
+    # api_version: 
+    engine: gpt-4
