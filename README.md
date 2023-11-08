@@ -169,4 +169,4 @@ Use of Microsoft trademarks or logos in modified versions of this project must n
 Any use of third-party trademarks or logos are subject to those third-party's policies.
 
 ## LICENSE
-This project is licensed under the [MIT license](https://github.com/microsoft/EvoPrompt/blob/main/LICENSE). in the root directory of this source tree.
+This project is licensed under the [MIT license](https://github.com/microsoft/EvoPrompt/blob/main/LICENSE) in the root directory of this source tree.
