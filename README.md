@@ -146,14 +146,6 @@ If you find this repository helpful, please consider citing our paper:
 }
 ```
 
-## Acknowledgements
-
-Our codebase is based on the following repos. Thanks for open-sourcing!
-
-- [CoT-hub](https://github.com/FranxYao/chain-of-thought-hub)
-- [APE](https://github.com/keirp/automatic_prompt_engineer)
-- [LM-BFF](https://github.com/princeton-nlp/LM-BFF)
-
 ## Contributing
 
 This project welcomes contributions and suggestions. Most contributions require you to agree to a
