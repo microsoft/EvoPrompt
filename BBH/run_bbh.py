@@ -1,10 +1,9 @@
-# evaluating GPT-3.5 turbo model on BBH
+# evaluating GPT-3.5 model on BBH
 
 import openai
 import json
 import numpy as np
 from tqdm import tqdm
-from tenacity import retry, stop_after_attempt, wait_chain, wait_fixed
 from utils import extract_ans, batchify
 from llm_client import turbo_query, davinci_query
 
@@ -19,11 +18,6 @@ FREE_FORM_TASKS = [
         'boolean_expressions', 'object_counting', 'formal_fallacies', 'causal_judgement', 'web_of_lies', 
 ]
 
-@retry(wait=wait_chain(*[wait_fixed(3) for i in range(3)] +
-                       [wait_fixed(5) for i in range(2)] +
-                       [wait_fixed(10)]))
-def completion_with_backoff(**kwargs):
-    return openai.ChatCompletion.create(**kwargs)
 
 def create_dataset(mode, task_prompt, cot_prompt, eval_data,demon=1):
     questions = []
@@ -48,8 +42,6 @@ def create_dataset(mode, task_prompt, cot_prompt, eval_data,demon=1):
 
 
 def eval_task(task, task_prompt,cot_prompt,eval_data, client, model_index,logger,demon ,**kwargs):
-    # for task in tasks:
-    # print('Testing %s ...' % task)
     correct = 0
     mode = 'multiple_choice' if task in MULTIPLE_CHOICE_TASKS else 'free_form'
     print_first = True
